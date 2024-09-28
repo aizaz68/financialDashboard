@@ -30,7 +30,7 @@ export async function createInvoice(formData: FormData) {
 
   revalidatePath('/dashboard/invoices');
   
-  redirect('/dashbaord/invoices');
+  redirect('/dashboard/invoices');
 }
 
 
@@ -42,6 +42,10 @@ export async function upadateInvoice(id:string ,formData:FormData){
     status:formData.get('status'),
   });
 
+
+
+
+  // i have done changes couple of changes into the code
   const amountInCents=amount*100;
 
   await sql` UPDATE  invoices SET customer_id =${customerId} , amount =${amountInCents} ,status=${status} WHERE id=${id}`;
