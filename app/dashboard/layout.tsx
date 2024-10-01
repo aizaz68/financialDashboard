@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import SideNav from "../ui/dashboard/sidenav";
 
 export const experimental_ppr=true;
