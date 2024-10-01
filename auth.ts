@@ -22,7 +22,7 @@ async function getUser(email:string):Promise<User|undefined>{
 
 export const {auth,signIn,signOut}=NextAuth({...authConfig,providers:[Credentials({
     async authorize(credentials){
-        const parsedCredentils =z.object({email:z.string().email(),password:z.string().min({6)}).safeParse(credentials);
+        const parsedCredentils =z.object({email:z.string().email(),password:z.string().min(6)}).safeParse(credentials);
         if(parsedCredentils.success){
             const {email,password}=parsedCredentils.data;
             const user=await getUser(email);    
